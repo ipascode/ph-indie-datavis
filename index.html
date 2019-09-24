@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>PH Indie Music</title>
+  </head>
+
+  <body>
+
+    <div id= "sections">
+        <section class= "step">
+           <h2>Explore PH Indie Music</h2>
+            <p>The graph plots song similarity based on  the following 8 features which were <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">reduced</a> to two dimensions:</p>
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="acousticness-tab" data-toggle="pill" href="#pills-acousticness" role="tab" aria-controls="pills-acousticness" aria-selected="true">acousticness</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="danceability-tab" data-toggle="pill" href="#pills-danceability" role="tab" aria-controls="pills-danceability" aria-selected="false">danceability</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="energy-tab" data-toggle="pill" href="#pills-energy" role="tab" aria-controls="pills-energy" aria-selected="false">energy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="instrumentalness-tab" data-toggle="pill" href="#pills-instrumentalness" role="tab" aria-controls="pills-instrumentalness" aria-selected="false">instrumentalness</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="loudness-tab" data-toggle="pill" href="#pills-loudness" role="tab" aria-controls="pills-loudness" aria-selected="false">loudness</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="speechiness-tab" data-toggle="pill" href="#pills-speechiness" role="tab" aria-controls="pills-speechiness" aria-selected="false">speechiness</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="valence-tab" data-toggle="pill" href="#pills-valence" role="tab" aria-controls="pills-valence" aria-selected="false">valence</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="tempo-tab" data-toggle="pill" href="#pills-tempo" role="tab" aria-controls="pills-tempo" aria-selected="false">tempo</a>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-acousticness" role="tabpanel" aria-labelledby="pills-home-tab">A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</div>
+              <div class="tab-pane fade" id="pills-danceability" role="tabpanel" aria-labelledby="danceability-tab">Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</div>
+              <div class="tab-pane fade" id="pills-energy" role="tabpanel" aria-labelledby="energy-tab">Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</div>
+              <div class="tab-pane fade" id="pills-instrumentalness" role="tabpanel" aria-labelledby="instrumentalness-tab">Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content.</div>
+              <div class="tab-pane fade" id="pills-loudness" role="tabpanel" aria-labelledby="loudness-tab">The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.</div>
+              <div class="tab-pane fade" id="pills-speechiness" role="tabpanel" aria-labelledby="speechiness-tab">Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.</div>
+              <div class="tab-pane fade" id="pills-valence" role="tabpanel" aria-labelledby="valence-tab">A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). </div>
+              <div class="tab-pane fade" id="pills-tempo" role="tabpanel" aria-labelledby="tempo-tab">The overall estimated tempo of a track in beats per minute (BPM).</div>
+            </div>
+
+        </section>
+
+        <section class="step">Most Similar Songs
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="image-container">
+                        <img src="https://i.scdn.co/image/674dbb85d684a8d8a873442dfe5955de20bc32e9" class="song-image"><div class="overlay" id="song-wsk"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        WSK (Wasak)<br><div class="artist">Miss Ramonne</div></div>
+                    <div class="col-sm-1"><br>&</div>
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/c529f9a437b3204389c86aae3757cbf010a3815c" class="song-image"><div class="overlay"  id="song-apollo11"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Apollo 11<br><div class="artist">The Buildings</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/3aa1f0dca6267e29834964c807391185f77b32b1" class="song-image"><div class="overlay" id="song-favdonut"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Favorite Donut<br><div class="artist">Rob & the Hitmen</div></div>
+                    <div class="col-sm-1"><br>&</div>
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/6d4c9cb6d14413a3bc84b03fe4acfd86ba6f88b4" class="song-image"><div class="overlay" id="song-loveme"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Love Me Instead (31° Remix)
+                        <div class="artist">Moira Dela Torre</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                    <div class="image-container"><img src="https://i.scdn.co/image/f1e93b8bdec93f12d4bca7f15aebcca374715aee" class="song-image"><div class="overlay"  id="song-magkunwari"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                    Magkunwari ('Di Man Tayo)<br><div class="artist">December Avenue</div></div>
+                    <div class="col-sm-1"><br>&</div>
+                    <div class="col-sm">
+                    <div class="image-container"><img src="https://i.scdn.co/image/f55812a180ff33cacadbb4595e4efa5d6bcaed6e" class="song-image"><div class="overlay" id="song-liveagain"><img src="img/volume-high.svg" class="music-icon" ></div></div>
+                    Live Again <br><div class="artist">The Cohens</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/7e6a7a0c2bfad7f1448c4d070e51d5f998298a3e" class="song-image"><div class="overlay"  id="song-jopay"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Jopay <br><div class="artist">Mayonnaise</div> </div>
+                    <div class="col-sm-1"><br>&</div>
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/a6b64fad5a83dcc540f5656a4d8ac3032e592a4f" class="song-image"><div class="overlay" id="song-runaway"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Run Away <br><div class="artist">RedLightGo!</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/1d5ef100590505ba76d4ce39e62f8b4db3f44fc9" class="song-image"><div class="overlay" id="song-bulong-reid"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Bulong <br> <div class="artist">James Reid</div> </div>
+                    <div class="col-sm-1"><br>&</div>
+                    <div class="col-sm">
+                        <div class="image-container"><img src="https://i.scdn.co/image/38a3bbf061a266d16fb597d34def8f0ef84ade30" class="song-image"><div class="overlay" id="song-moonstruck"><img src="img/volume-high.svg" class="music-icon"></div></div>
+                        Moonstruck <br><div class="artist"> The Strange Creatures</div> </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="step">
+            <div id="popularity">Most Popular Songs
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/cf16e1eaa5b71b70c2c7406c996cd919aa0c5619"><div class="overlay" id="song-sana"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#1</div> Sana<div class="artist">I Belong to the Zoo</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/407c122530dcc20437090010b10fc171be52b09a"><div class="overlay" id="song-hindi-na-nga"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#2</div>Hindi Na Nga<div class="artist">This Band</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/71564475399ac06f3b9d03a844726f492fed7876"><div class="overlay" id="song-maybe-the-night"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#3</div>Maybe The Night <div class="artist">Ben&Ben</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/7510ece15fedaded0a5596f9ca4698af7896dec9"><div class="overlay" id="song-kung-di-rin-lang-ikaw"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#4</div>Kung 'Di Rin Lang Ikaw  <div class="artist">December Avenue</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/d0541fb7a1f93f498834747b9609d0de4d859e30"><div class="overlay" id="song-huling-sandali"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#5</div>Huling Sandali   <div class="artist">December Avenue</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/df8157af631d344eaa6bc7c316a67187e9a07a07"><div class="overlay" id="song-kahit-ayaw-mo-na"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#6</div>Kahit Ayaw Mo Na<div class="artist">This Band</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/f7108f50ee31b4c5badc4160579d30cdbec402f3"><div class="overlay" id="song-di-na-babalik"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#7</div>'Di Na Babalik  <div class="artist">This Band</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/7e7ac1b30d14fd2ae350669e745fe87f0fe5de54"><div class="overlay" id="song-dahan"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#8</div>Dahan<div class="artist">December Avenue</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/a127d1cc34a9a48b1cff29cae8c8403338574b99"><div class="overlay" id="song-bulong"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#9</div>Bulong  <div class="artist">December Avenue</div></div></div>
+                    <div class="row">
+                        <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/424d0b4eb398d0c4f23f7d976ad28b9efec0c8b1"><div class="overlay" id="song-balang-araw"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
+                        <div class="col-sm"><div class="ranking">#10</div>Balang Araw <div class="artist">I Belong to the Zoo</div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="album-variation">
+            <div class="title">Album Variation</div>
+            
+            <div class="container">
+                Albums with the most similar songs:
+                <div class="row">
+                    <div class="col-sm">
+                    <img src="https://i.scdn.co/image/7f4be8fc0e94f0ab0c2bee09ff2572a2a9601ba1" id="album-points">
+                    <br>Points & Perspectives<div class="artist">Lions & Acrobats</div>
+                    </div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/5a32e34cf3ab510ce4fdcf66d784822439960a07" id="album-zilch"><br>Zilch <div class="artist">Pupil</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/e6c0a799b4fdf247f70ade6783f9f644757da1f7" id="album-emprise"><br>Emprise <div class="artist">Rap Sanchez</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/97683059e8c92d00d1efcf6637320dcc518f31a1" id="album-cheats"><br>Cheats <div class="artist">Cheats</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/7af8dd30372f0ed50e88e0a17b448b1745fe7b50" id="album-soully"><br>Soully, Yours<div class="artist">Curtismith</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/6bd5ab7418a23642be865afc8445f840bb648d4c" id="album-fatigue"><br>Fatigue<div class="artist">Assembly Generals  </div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/227010e5fe34212dfeda0cc0f5ef1c51f00a1ec3" id="album-traces"><br>Traces <div class="artist">The Ransom Collective</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/b0755f20ef57ec5047b4b8dfdd998a2b23c078b7" id="album-summer"><br>summer/salt <div class="artist">Nights of Rizal</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/15c6755e8a29518d748fa271ceced8366005dc9e" id="album-taeng"><br>Taeng Aso <div class="artist">123 Pikit!</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/6645c970879ef43e07b7e600bef10e4bd8b86787" id="album-palm"><br>Palm Dreams <div class="artist">James Reid</div></div>
+                </div>
+            </div>
+            <br>
+            <div class = "container">
+                Albums with the least similar songs:
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/e60bf59657c49326ee6393cd9580e21095a619af" id="album-naritokanangapala"><br>Naritokanangapala<div class="artist">lluwin</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/19aee5cd4d2f21d0a6f91baaeca20b806a9d07da" id="album-pastilan"><br>Pastilan Dong!<div class="artist">Pastilan Dong!</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/c4756c2be23f3e48d59bf36816bd06823caf23f2" id="album-soberhaul"><br>Soberhaul<div class="artist">MilesExperience</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/b27dcb971e671e11b62b7559a493557f221dda93" id="album-of-the-bed"><br>Of the Bed<div class="artist">MOONWLK</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/d772ce395224ef5e5f218101b618faa8615d4ad0" id="album-grandma"><br>Grandma<div class="artist">UNIQUE</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/31b3251ebabcafa4bdf887ff3c760ad1202a2b1b" id="album-rockstar"><br>Rockstar Heaven<div class="artist">Monolog</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/52c7a95efdbbf8e1ffa5fa23d4dece237714f58a" id="album-for-the-rest"><br>For The Rest Of My Life<div class="artist">Mayonnaise</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/736c5a30a52e9e252f94b5d8137453f4fd3f9622" id="album-gusto-ko"><br>Gusto Ko Lang Kasama Ka Palagi Pero Hindi Pwede<div class="artist">Mayonnaise</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><img src="https://i.scdn.co/image/b640ae0a85251ca9879fd6d0c680dcfb7a7f5e33" id="album-glaiza"><br>Glaiza Synthesis<div class="artist">Glaiza De Castro</div></div>
+                    <div class="col-sm"><img src="https://i.scdn.co/image/d227664d0d8f19c7399e89068a36244830d444b5" id="album-orchid"><br>Orchid<div class="artist">crwn</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="step">
+            Notes
+            <br>
+            "Indie" here is loosely defined as anything that was tagged indie by Spotify, not whether it was released on an independent label.
+            The data was limited to tracks released from 2014 to May 2019.
+            <p>See the <a href="https://github.com/xacasi/ph-indie-analysis/blob/master/The%20Sound%20of%20Indie.ipynb">jupyter notebook</a> for in-depth analysis.</p>
+            
+        </section>
+
+
+    </div>
+
+
+
+      <div id='vis'>
+            <div id ="track-info">
+                Track Info
+                <div id="track-name">Song:</div>
+                <div id="track-artist">Artist:</div>
+                <div id = "track-chart"></div>
+            </div>
+            <div id="parallel"></div> 
+            <div id="track-scatterplot">
+            </div>
+
+        
+
+      </div>
+
+<!--     <div class="text-center">
+
+        <p>Indie music here is loosely defined by songs (and related tracks) added to Spotify's PH Indie Music playlists.
+
+        <br>Additionally, only musicians based in the Philippines were included. As such, acts like Denise Santos and No Rome are not included.
+
+        <br>Tracks analyzed are limited to releases from 2014 to May 2019 to assess the current state of the indie scene.
+
+        <br>View the Jupyter Notebook for further analysis</p>
+
+    </div> -->
+   
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src=js/bootstrap.min.js></script>
+
+    <!-- Optional JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js" integrity="sha256-El7dyxdVp1e1v0xgjrrpzr5+BO29pwP0Qfl40VDffiI=" crossorigin="anonymous"></script>
+
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/graph-scroll.js"></script>
+
+
+  </body>
+</html>

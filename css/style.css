@@ -1,0 +1,174 @@
+body {
+	background-color: #080808;
+	color: white;
+
+}
+
+h2 {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 22px;
+    line-height: 1.375rem;
+    font-weight: 700;
+    font-style: normal;
+    font-family: georgia,times new roman,times,serif;
+}
+
+#tooltip {
+     position: absolute;
+     text-align: center;
+     padding: .3rem;
+     background: #313639;
+     color: #f9f9f9;
+     border: 0px;
+     border-radius: 10px;
+}
+
+#sections {
+	position: relative;
+	display: inline-block;
+	width: 310px;
+	z-index: 90;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	background-color: #1c1c1c;
+}
+
+.step {
+	margin-bottom: 200px;
+
+}
+
+#vis {
+	display: inline-block;
+	position: fixed;
+}
+
+#track-scatterplot{
+	position: relative;
+	z-index: 5;
+}
+
+#track-info{
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	z-index: 10;
+	padding: 15px;
+
+	width: 330px;
+	height: 600px;
+	display: block;
+
+	cursor: move;
+	
+}
+
+#parallel{
+	width: 700px;
+	height: 300px;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	position: absolute;
+	z-index: 9;
+	display: block;
+	bottom: 0;
+
+	opacity: 0;
+
+}
+
+.nav-pills {
+	font-size: 14px;
+}
+
+.tab-content{
+	font-size: 14px;
+}
+
+#sections .step{
+	opacity: .2;
+} 
+
+#sections .step.graph-scroll-active{
+	opacity: 1;
+}
+
+
+
+.row{
+	text-align: center;
+	margin-top: 30px;
+}
+
+#popularity .row{
+	text-align: left;
+	margin-top: 30px;
+}
+
+#popularity .image-container{
+	margin-right: 15px;
+}
+
+.row .artist{
+	font-size: 14px;
+	color: gray;
+}
+
+.image-container{
+	position: relative;
+	width: 64px;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	padding-bottom: 10px;
+  	height: 64px;
+}
+
+img.song-image {
+	position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.5);  
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.image-container:hover img.song-image{
+	opacity: 0.5;
+}
+
+
+.music-icon {
+	filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(81deg) brightness(108%) contrast(102%);
+	width: 15px;
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+  	-webkit-transform: translate(-50%, -50%);
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+}
+
+.ranking{
+	color: red;
+	font-weight: bold;
+}
+
+#album-variation img:hover {
+	cursor: pointer;
+}
+
