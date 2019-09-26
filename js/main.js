@@ -2,16 +2,21 @@
 *    main.js
 */
 
-	var color_bars = "#171ad1";
+	var color_bars = "#190061";
 	//Scatter Plot
 
 	// attributes
 	var circle_color = "#d3d3d3";
-	var circle_highlight = "blue";
+	var circle_highlight = "#3500d3";
+
+	$( "#parallel" ).hide();
+	$( "#volume-slider" ).hide()
+	$( "#hide-parallel" ).hide();
+
 
    	// set the dimensions and margins of the graph
-	var margin = {top: 10, right: 10, bottom: 10, left: 5},
-	    width = window.innerWidth - margin.left - margin.right,
+	var margin = {top: 10, right: 10, bottom: 10, left: 10},
+	    width = window.innerWidth - margin.left - margin.right - 330,
 	    height = window.innerHeight - margin.top - margin.bottom;
 
 
@@ -22,7 +27,7 @@
 	 		"loudness": [-60,0],"speechiness": [0,1],"valence": [0,1],"tempo": [0,250]};
 
 	// set the dimensions and margins of the graph
-	var track_margin = {top: 10, right: 10, bottom: 10, left: 5},
+	var track_margin = {top: 5, right: 10, bottom: 20, left: 5},
 	  track_width = 300 - track_margin.left - track_margin.right,
 	  track_height = 500 - track_margin.top - track_margin.bottom;
 
@@ -37,7 +42,7 @@
 	//Parallel Graph
 	
 	// set the dimensions and margins of the graph
-	var parallel_margin = {top: 20, right: 10, bottom: 10, left: 0},
+	var parallel_margin = {top: 60, right: 0, bottom: 10, left: 10},
 	  parallel_width = 700 - parallel_margin.left - parallel_margin.right,
 	  parallel_height = 300 - parallel_margin.top - parallel_margin.bottom;
 
@@ -52,11 +57,16 @@
 
 d3.csv("data/phindie.csv").then(function(data){
 
+	var track_hidden = false;
+	var parallel_hidden = false;
+	var slider_hidden = true;
+
 	d3.graphScroll()
 	  .sections(d3.selectAll('#sections .step'))
 	  .on('active', function(i){
 	  	if (i==3){
-	  		d3.select("#parallel").transition().style("opacity", 1);
+	  		$( "#hide-parallel" ).show();
+	  		$( "#parallel" ).show();
 	  	 }
 	  	});
 
@@ -139,9 +149,9 @@ d3.csv("data/phindie.csv").then(function(data){
 		     tooltip
 		     	.style("visibility","visible");
 
-		     tooltip.html(d.name + " by "+ d.artist_name)
-		     	.style("left", (d3.event.pageX) + "px")			 
-				.style("top", (d3.event.pageY) + "px");
+		     tooltip.text(d.name + " by "+ d.artist_name)
+		     	.style("left", (d3.event.pageX-300) + "px")			 
+				.style("top", (d3.event.pageY-10) + "px");
 
 
 		})
@@ -160,8 +170,6 @@ d3.csv("data/phindie.csv").then(function(data){
 			d3.select("#track-artist").text("Artist: " +d.artist_name);
 			updateTrackInfo(d);
 			checkPlaying(d.preview_url, d.id, this);
-			item = d3.select(this);
-			console.log(item.node());
 
 		});
 
@@ -181,8 +189,10 @@ d3.csv("data/phindie.csv").then(function(data){
 
 		}
 
+		volume_value =  (d3.select("#volume").node().value)/100;
+
 		function playAudio(url, track_id, circle) {
-			sound = new Howl({ src: url, format: ['mp3'],
+			sound = new Howl({ src: url, format: ['mp3'], volume: volume_value,
 					onplay: function(){
 						isPlaying = true;
 						idPlaying = track_id;
@@ -207,6 +217,24 @@ d3.csv("data/phindie.csv").then(function(data){
 				});
 			sound.play();
 			}
+
+
+
+	d3.select("#volume").on("input", function() {
+    		updateVolume(this.value);
+    	});
+
+	// update the elements
+	function updateVolume(volume) {
+
+	  // adjust the text on the range slider
+	  d3.select("#volume-value").text(volume);
+	  d3.select("#volume").property("value", volume);
+
+	  sound.volume(volume/100);
+	}
+
+
 
 	// Prepare a color palette
   	var color = d3.scaleLinear()
@@ -328,8 +356,6 @@ d3.csv("data/phindie.csv").then(function(data){
 		updateTrackInfo(data[1557]);
 		d3.select("#track-name").text("Song: " +data[1557].name);
 		d3.select("#track-artist").text("Artist: " +data[1557].artist_name);
-		d3.select("#circle-"+data[1557].id);
-
 	});
 
 	$('#song-apollo11').click(function(){
@@ -465,13 +491,6 @@ d3.csv("data/phindie.csv").then(function(data){
 		d3.select("#track-artist").text("Artist: " +data[1454].artist_name);
 	});
 
-	var drag = d3.drag().on("drag", function () {
-         d3.event.sourceEvent.stopPropagation(); // silence other listeners
-          dragMove(this, obj, 'points')
-     })
-
-	d3.select("track-info").call(drag);
-
 //Album Variation
 	var album_selected;
 	var album_highlighted = false;
@@ -496,9 +515,9 @@ d3.csv("data/phindie.csv").then(function(data){
 			    .enter().append("path")
 			    .attr("class", "myPath")
 			    .attr("d",  path)
-			    .attr("opacity", 0.8)
+			    .attr("opacity", 0.6)
 			    .style("fill", "none")
-			    .style("stroke", color_bars);
+			    .style("stroke", "red");
 
 		}
 		album_selected = album_id_html;
@@ -607,6 +626,42 @@ d3.csv("data/phindie.csv").then(function(data){
 		album_variation("4n7JDVgx22y8S3can1mSjk");
 
 	});
+
+	
+
+	d3.select("#hide-track").on("click", function() {
+		if (track_hidden){
+    		$( "#track-info" ).show();
+    		track_hidden = false;
+		}
+		else{
+			$( "#track-info" ).hide();
+			track_hidden = true;
+		}
+    	});
+
+	d3.select("#hide-parallel").on("click", function() {
+		if (parallel_hidden){
+    		$( "#parallel" ).show();
+    		parallel_hidden = false;
+		}
+		else{
+			$( "#parallel" ).hide();
+			parallel_hidden = true;
+		}
+    	});
+
+	d3.select("#volume-icon").on("click", function() {
+		if (slider_hidden){
+    		$( "#volume-slider" ).show();
+    		slider_hidden = false;
+		}
+		else{
+			$( "#volume-slider" ).hide();
+			slider_hidden = true;
+		}
+    	});
+
 
 
 

@@ -10,6 +10,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral&display=swap" rel="stylesheet">
 
     <title>PH Indie Music</title>
   </head>
@@ -18,7 +19,7 @@
 
     <div id= "sections">
         <section class= "step">
-           <h2>Explore PH Indie Music</h2>
+           <h2 >Explore PH Indie Music</h2>
             <p>The graph plots song similarity based on  the following 8 features which were <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">reduced</a> to two dimensions:</p>
 
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -61,7 +62,7 @@
 
         </section>
 
-        <section class="step">Most Similar Songs
+        <section class="step"><h4 class="title">Most Similar Songs</h4>
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
@@ -115,7 +116,7 @@
         </section>
 
         <section class="step">
-            <div id="popularity">Most Popular Songs
+            <div id="popularity"><h4 class="title">Most Popular Songs</h4>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3"><div class="image-container"><img src="https://i.scdn.co/image/cf16e1eaa5b71b70c2c7406c996cd919aa0c5619"><div class="overlay" id="song-sana"><img src="img/volume-high.svg" class="music-icon"></div></div></div>
@@ -153,10 +154,10 @@
         </section>
 
         <section class="step" id="album-variation">
-            <div class="title">Album Variation</div>
-            
+            <h4 class="title">Album Variation</h4>
+            Albums with the <u>most similar</u> songs:
             <div class="container">
-                Albums with the most similar songs:
+                
                 <div class="row">
                     <div class="col-sm">
                     <img src="https://i.scdn.co/image/7f4be8fc0e94f0ab0c2bee09ff2572a2a9601ba1" id="album-points">
@@ -182,8 +183,9 @@
                 </div>
             </div>
             <br>
+            Albums with the <u>least similar</u> songs:
             <div class = "container">
-                Albums with the least similar songs:
+                
                 <div class="row">
                     <div class="col-sm"><img src="https://i.scdn.co/image/e60bf59657c49326ee6393cd9580e21095a619af" id="album-naritokanangapala"><br>Naritokanangapala<div class="artist">lluwin</div></div>
                     <div class="col-sm"><img src="https://i.scdn.co/image/19aee5cd4d2f21d0a6f91baaeca20b806a9d07da" id="album-pastilan"><br>Pastilan Dong!<div class="artist">Pastilan Dong!</div></div>
@@ -207,14 +209,11 @@
             </div>
         </section>
 
-        <section class="step">
-            Notes
+        Notes
             <br>
             "Indie" here is loosely defined as anything that was tagged indie by Spotify, not whether it was released on an independent label.
-            The data was limited to tracks released from 2014 to May 2019.
+            <br>The data was limited to tracks released from 2014 to May 2019.
             <p>See the <a href="https://github.com/xacasi/ph-indie-analysis/blob/master/The%20Sound%20of%20Indie.ipynb">jupyter notebook</a> for in-depth analysis.</p>
-            
-        </section>
 
 
     </div>
@@ -222,12 +221,22 @@
 
 
       <div id='vis'>
+        <div class="hide" id="hide-track">[show/hide]</div>
             <div id ="track-info">
-                Track Info
-                <div id="track-name">Song:</div>
-                <div id="track-artist">Artist:</div>
-                <div id = "track-chart"></div>
+                Track Info 
+                    <div id="track-contents">
+                    <div id="track-name">Song:</div>
+                    <div id="track-artist">Artist:</div>
+                    <div id = "track-chart"></div>
+                </div>
+
             </div>
+            <div id="volume-box">
+                <span><img src="img/volume-high.svg" id="volume-icon"></span>
+                <span id="volume-slider"><input type="range" min="0" max="100" value="30" step="1" id="volume">
+                    <span id="volume-value">30</span></span>
+            </div>
+            <div class="hide" id="hide-parallel">[show/hide]</div>
             <div id="parallel"></div> 
             <div id="track-scatterplot">
             </div>
@@ -251,12 +260,11 @@
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src=js/bootstrap.min.js></script>
+    <script src=js/bootstrap.bundle.min.js></script>
 
     <!-- Optional JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js" integrity="sha256-El7dyxdVp1e1v0xgjrrpzr5+BO29pwP0Qfl40VDffiI=" crossorigin="anonymous"></script>
+    <script src="js/howler.min.js"></script>
 
 
     <!-- Custom JS -->
