@@ -169,29 +169,37 @@ d3.csv("data/phindie.csv").then(function(data){
 			d3.select("#track-name").text("Song: " +d.name);
 			d3.select("#track-artist").text("Artist: " +d.artist_name);
 			updateTrackInfo(d);
-			checkPlaying(d.preview_url, d.id, this);
+			circle_album = d3.select(this).attr("class");
+			if( "."+circle_album == album_selected && album_highlighted){
+				checkPlaying(d.preview_url, d.id, this, "red");
+			}
+
+			else{
+				checkPlaying(d.preview_url, d.id, this);
+			}
 
 		});
 
-		function checkPlaying(url, track_id, item){
+		function checkPlaying(url, track_id, item, color= "#d3d3d3"){
 			if (isPlaying && track_id == idPlaying) {
 				sound.stop();
 			}
 
 			else if (!isPlaying){
-				playAudio(url, track_id, item);
+				playAudio(url, track_id, item, color);
 			}
 
 			else {
 				sound.stop();
-				playAudio(url, track_id, item);
+				playAudio(url, track_id, item, color);
 			}
 
 		}
 
 		volume_value =  (d3.select("#volume").node().value)/100;
 
-		function playAudio(url, track_id, circle) {
+		function playAudio(url, track_id, circle, color) {
+
 			sound = new Howl({ src: url, format: ['mp3'], volume: volume_value,
 					onplay: function(){
 						isPlaying = true;
@@ -206,18 +214,17 @@ d3.csv("data/phindie.csv").then(function(data){
 						isPlaying = false;
 
 						d3.select(circle)
-		          			.style('fill',circle_color);
+		          			.style('fill',color);
 					},
 					onend: function() {
 						isPlaying = false;
 
 						d3.select(circle)
-		          			.style('fill',circle_color);
+		          			.style('fill',color);
 					}
 				});
 			sound.play();
 			}
-
 
 
 	d3.select("#volume").on("input", function() {
@@ -306,7 +313,7 @@ d3.csv("data/phindie.csv").then(function(data){
 		  		.attr("x", x_feature[p](d[p]))
 		    	.attr("width", track_width - x_feature[p](d[p]))
 		    rect.select(".text-"+p).transition()
-				.attr("x", x_feature[p](d[p]) + 5)
+				.attr("x", Math.min(x_feature[p](d[p]) + 5, 255))
 				.text(d[p]);	
 			})
 	}
@@ -499,6 +506,7 @@ d3.csv("data/phindie.csv").then(function(data){
 		var album_id_html = ".album-"+album_id;
 
 		if (album_selected == album_id_html && album_highlighted){
+			circle_color = "#d3d3d3";
 			d3.selectAll(album_selected).style("fill", circle_color).style("opacity", 0.5);
 			album_highlighted = false;
 			parallel_svg.selectAll(".myPath").remove();
@@ -519,11 +527,13 @@ d3.csv("data/phindie.csv").then(function(data){
 			    .style("fill", "none")
 			    .style("stroke", "red");
 
+			    circle_color="red";
+
 		}
 		album_selected = album_id_html;
 
 	}
-
+//list
 	$('#album-points').click(function(){
 		album_variation("4cx6CRSKWfQ90pSIbptsQh");
 

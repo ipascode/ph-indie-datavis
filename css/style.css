@@ -57,6 +57,10 @@ u{
 	position: fixed;
 }
 
+#notes{
+	font-size: 14px;
+}
+
 #track-scatterplot{
 	position: relative;
 	z-index: 5;
