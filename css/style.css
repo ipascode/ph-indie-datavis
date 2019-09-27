@@ -171,6 +171,10 @@ u{
 	font-size: 14px;
 }
 
+#pills-tabContent{
+	margin-bottom: 20px;
+}
+
 #sections .step{
 	opacity: .2;
 } 
